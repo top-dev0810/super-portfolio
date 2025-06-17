@@ -1,0 +1,385 @@
+.navigation-hint {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1000;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 16px;
+  transition: opacity 0.3s ease;
+  max-width: 300px;
+  pointer-events: none;
+  animation: pulse-text 3s infinite ease-in-out;
+}
+
+.navigation-hint.mobile {
+  background-color: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  border: none;
+  animation: none;
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+}
+
+.navigation-hint.mobile .gesture-container {
+  position: relative;
+  height: auto;
+  margin-bottom: 20px; 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation-hint.mobile .hint-title {
+  position: relative;
+  margin-top: auto;
+}
+
+/* common styles */
+.gesture-container {
+  display: flex;
+  align-items: center;
+}
+
+.gesture-container.desktop {
+  margin-bottom: 16px;
+}
+
+.gesture-container.mobile {
+  margin-bottom: 80px;
+}
+
+.hint-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* add pulsing animation to the hint title */
+.hint-title {
+  animation: pulse-text 3s infinite ease-in-out;
+}
+
+@keyframes pulse-text {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* mobile swipe styles */
+.swipe-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  padding: 0 10px;
+
+  flex-direction: column;
+  height: auto;
+  width: 60px;
+  margin: 0 auto;
+}
+
+.swipe-indicator {
+  margin: 0 5px;
+  position: relative;
+  width: 200px;
+  align-items: center;
+  z-index: 2;
+
+  width: 40px;
+  height: 200px;
+  flex-direction: column;
+}
+
+.swipe-track {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+
+  width: 2px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.swipe-track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.7) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  animation: swipe-track 2s infinite;
+}
+
+/* base zoom icon styles */
+.zoom-icon {
+  width: 50px;
+  scale: 0.5;
+  height: auto;
+  opacity: 0.8;
+  vertical-align: middle;
+  transition: transform 0.2s ease-out;
+}
+
+/* left zoom indicator icon animation, grows as hand approaches */
+.zoom-indicator.top .zoom-icon {
+  animation: zoom-top-proximity 2s infinite ease-in-out;
+}
+
+/* right zoom indicator icon animation, grows as hand approaches */
+.zoom-indicator.bottom .zoom-icon {
+  animation: zoom-bottom-proximity 2s infinite ease-in-out;
+}
+
+/* animation for top zoom icon with gradual scaling based on hand proximity */
+@keyframes zoom-top-proximity {
+
+  /* hand moves down, away from top icon - shrink back to normal */
+  0%,
+  10% {
+    transform: scale(1.3);
+  }
+
+  25%,
+  45% {
+    transform: scale(1);
+  }
+
+  /* hand moves from bottom to top, grow as it gets closer */
+  50%,
+  65% {
+    transform: scale(1);
+  }
+
+  85%,
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+/* animation for bottom zoom icon with gradual scaling based on hand proximity */
+@keyframes zoom-bottom-proximity {
+
+  /* hand moves from top to bottom - grow as it gets closer */
+  0%,
+  10% {
+    transform: scale(1);
+  }
+
+  35%,
+  45% {
+    transform: scale(1.3);
+  }
+
+  /* hand moves up, away from bottom icon, shrink back to normal */
+  50%,
+  60% {
+    transform: scale(1.3);
+  }
+
+  75%,
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* mobile styles */
+@media (max-width: 480px) {
+  .navigation-hint {
+    bottom: 20px;
+    padding: 14px 20px;
+    max-width: 280px;
+  }
+
+  .gesture-container {
+    height: 60px;
+  }
+}
+
+/* touch hand animation with continuous left-right movement */
+.touch-hand {
+  position: absolute;
+  width: 30px;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  animation: handSwipeContinuous 2s infinite ease-in-out;
+  opacity: 0.8;
+
+  left: 65%;
+  transform: translateX(-50%);
+  rotate: -20deg;
+}
+
+@keyframes handSwipeContinuous {
+  0% {
+    top: -5px;
+    transform: translateX(-50%);
+  }
+
+  /* move from top to bottom */
+  45% {
+    top: calc(100% - 25px);
+    transform: translateX(-50%);
+  }
+
+  /* small pause at the bottom */
+  50% {
+    top: calc(100% - 25px);
+    transform: translateX(-50%);
+  }
+
+  /* move from bottom back to top */
+  95% {
+    top: -5px;
+    transform: translateX(-50%);
+  }
+
+  /* small pause at the top */
+  100% {
+    top: -5px;
+    transform: translateX(-50%);
+  }
+}
+
+/* desktop scroll styles */
+.scroll-indicator {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mouse-body {
+  width: 72px;
+  height: 120px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 36px;
+  position: relative;
+}
+
+/* mouse wheel animation */
+.mouse-wheel {
+  width: 12px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollWheel 2s infinite;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+}
+
+@keyframes scrollWheel {
+
+  0%,
+  100% {
+    top: 8px;
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    top: 24px;
+    opacity: 0.7;
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* scroll actions */
+.scroll-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* first scroll-action (up) gets normal flow */
+.scroll-action:first-child {
+  flex-direction: row;
+}
+
+/* second scroll-action (down) gets row-reverse */
+.scroll-action:last-child {
+  flex-direction: row-reverse;
+}
+
+@keyframes pulseArrow {
+
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* vertical arrangement for scroll actions */
+.scroll-action.vertical {
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 20px;
+}
+
+/* adjust margins to create proper spacing */
+.scroll-action.vertical .zoom-icon {
+  animation: pulseScale 2s infinite;
+  transform-origin: center;
+}
+
+/* different timing for top and bottom icons to alternate */
+.scroll-action.vertical:first-child .zoom-icon {
+  animation-delay: 0s;
+}
+
+.scroll-action.vertical:last-child .zoom-icon {
+  animation-delay: 1s;
+}
+
+@keyframes pulseScale {
+
+  0%,
+  100% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.zoom-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pitter | Portfolio</title>
+  <link rel="shortcut icon" type="x-icon" href="./assets/icon.png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+</head>
+
+<body class="bg-[#0a0a0a] text-gray-100">
+  <!-- Particles Container -->
+  <div id="particles-js" class="fixed inset-0 z-0"></div>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#0a0a0a]">
+    <div class="code-animation mb-4">
+      <span class="text-4xl font-mono font-bold text-gray-100 typing-text"></span>
+    </div>
+    <div class="loading-bar"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="opacity-0">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-40 nav-glass">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <a href="#" class="logo">PL.</a>
+
+          <!-- Enhanced Hamburger Menu -->
+          <div class="hamburger md:hidden" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Full Screen Mobile Menu Overlay -->
+    <div class="menu-overlay flex flex-col items-center justify-center">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#skills" class="mobile-nav-link">Skills</a>
+      <a href="#experience" class="mobile-nav-link">Experience</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
+
+    <!-- Sections Container -->
+    <div class="sections-container relative">
+
+
+      <!-- Home Section -->
+      <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center text-center py-20">
+
+        <div class="section__pic-container">
+          <img src="./assets/profile.jpeg" alt="Pitter Smith profile picture" class="profilepic" />
+        </div>
+
+        <div class="text-center z-10">
+          <p class="section__text__p1">Hello, I'm</p>
+          <h1 class="title"> Pitter Smith </h1>
+          <p class="section__text__p2"><span id="typewriter"></span><span id="cursor">|</span></p>
+
+          <div class="flex justify-center space-x-4">
+            <a href="./assets/Pitter_Smith_CV.pdf" target="_blank" class="glow-button">Download CV</a>
+            <a href="#contact" class="outline-button">Contact Me</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="min-h-screen flex flex-col items-center justify-center text-center py-20">
+        <div class="max-w-7xl mx-auto px-4">
+          <p class="section__text__p1">Get To Know More</p>
+          <h1 class="title mb-8">About Me</h1>
+
+          <div class="about-layout">
+            <!-- Profile picture -->
+            <div class="about__pic-container">
+              <img src="./assets/about-pic.jpg" alt="Profile picture" class="about-pic" />
+            </div>
+
+            <!-- Skill cards and paragraph -->
+            <div class="about-content">
+              <!-- Skill cards -->
+              <div class="skill-cards-container">
+                <div class="skill-card glass-card">
+                  <i class="fa-solid fa-briefcase"></i>
+                  <h3>Job Experience</h3>
+                  <p>2 years + <br />Mobile App Developer & IT Specialist</p>
+                </div>
+                <div class="skill-card glass-card">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                  <h3>Education</h3>
+                  <p>Bachelor's Degree in<br />National University of Singapore</p>
+                </div>
+              </div>
+
+              <!-- Paragraph -->
+              <p class="about-paragraph">
+                Hey there! I'm <strong>Pitter</strong>, a passionate <strong>Mobile App, Frontend & Backend
+                  Developer</strong> who
+                loves building smooth, functional apps and full-stack solutions that bring ideas to life. Whether it's a
+                sleek React
+                Native mobile app, a dynamic frontend in React or Vue, or a solid backend with Node.js or PHP—I enjoy
+                making things
+                work beautifully from end to end.
+                <br /><br />
+                I've been diving deep into <strong>modern development frameworks</strong> and <strong>backend
+                  logic</strong> for a
+                while now, constantly learning and pushing myself to write clean, efficient code that gets the job done.
+                Solving
+                real-world problems with tech is what drives me every day.
+                <br /><br />
+                When I'm not coding, I'm usually exploring new tech trends, experimenting with side projects, or
+                brushing up on the
+                latest in mobile and web development. I love staying curious and constantly improving my craft—there's
+                always
+                something new to learn in this field! 💡
+                <br /><br />
+                If you've got a project in mind or want to collaborate, feel free to reach out. I'm always excited to
+                take on new
+                challenges and create awesome things together! 🚀
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="min-h-screen flex items-center justify-center py-20">
+        <div class="experience-details-container">
+          <!-- Section Title -->
+          <div class="experience-header text-center mb-8">
+            <p class="section__text__p1">Explore My</p>
+            <h1 class="title">Skills</h1>
+          </div>
+
+          <!-- Skills Details -->
+          <div class="about-containers grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="glass-card">
+              <h2 class="experience-sub-title">Web Development</h2>
+              <div class="article-container grid grid-cols-2 md:grid-cols-3 gap-6">
+                <article>
+                  <img src="./assets/html.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>HTML5</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/css.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>CSS3</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/js.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>JavaScript</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/php.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>PHP</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/react.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>React</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/vue.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>Vue.js</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/jquery.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>jQuery</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/node.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>Node.js</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/bootstrap.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>Bootstrap</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h2 class="experience-sub-title">Mobile App Development & Others</h2>
+              <div class="article-container grid grid-cols-2 md:grid-cols-3 gap-6">
+                <article>
+                  <img src="./assets/react-native.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>React Native</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/android.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>Android Studio</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/java.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>Java</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/kotlin.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>Kotlin</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/vb.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>Visual Basic</h3>
+                    <p>Intermediate</p>
+                  </div>
+                </article>
+
+                <article>
+                  <img src="./assets/c.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>C++</h3>
+                    <p>Intermediate</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/photoshop.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>Photoshop</h3>
+                    <p>Intermediate</p>
+                  </div>
+                </article>
+
+                <article>
+                  <img src="./assets/git.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>Git</h3>
+                    <p>Intermediate</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./assets/wordpress.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>WordPress</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="min-h-screen flex items-center justify-center py-20">
+        <div class="max-w-7xl mx-auto px-4">
+          <!-- Section Title -->
+          <div class="text-center mb-12">
+            <p class="section__text__p1">My Professional</p>
+            <h1 class="title">Experience</h1>
+          </div>
+
+          <!-- New Timeline Container -->
+          <div class="modern-timeline">
+            <!-- Experience Item 1 -->
+            <!-- <div class="timeline-entry left">
+                  <div class="timeline-entry-content glass-card">
+                    <div class="entry-header">
+                      <span class="date">Jan 2025 - Apr 2025</span>
+                      <h3 class="text-xl font-bold text-blue-400">Junior Web Developer</h3>
+                      <p class="company text-gray-400">Duo Tax · Remote</p>
+                    </div>
+                    <div class="entry-body">
+                      <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>Design and develop WordPress websites using Bricks Builder, focusing on functionality and user experience</li>
+                        <li>Manage backend configurations, domain purchases via Synergy Wholesale, and hosting environments</li>
+                        <li>Configure DNS settings, automate Salesforce processes to improve workflow, and optimize SEO strategies using Google Analytics</li>
+                        <li>Develop optimized landing pages for marketing campaigns to enhance conversion rates</li>
+                      </ul>
+                      <div class="tech-stack flex flex-wrap gap-2 mt-4">
+                        <span class="tech-pill">React Native</span>
+                        <span class="tech-pill"></span>
+                        <span class="tech-pill">SEO</span>
+                        <span class="tech-pill">Salesforce</span>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+
+            <!-- Experience Item 2 -->
+            <div class="timeline-entry left">
+              <div class="timeline-entry-content glass-card">
+                <div class="entry-header">
+                  <span class="date">Sept 2023 ~</span>
+                  <h3 class="text-xl font-bold text-blue-400">IT Specialist & Web Developer</h3>
+                  <p class="company text-gray-400">Chiropractic First Group PH · On-site</p>
+                </div>
+                <div class="entry-body">
+                  <ul class="list-disc list-inside text-gray-400 space-y-2">
+                    <li>Develop and maintain responsive websites using PHP, HTML5, CSS3, and JavaScript</li>
+                    <li>Manage WordPress websites, DNS settings, and IT infrastructure</li>
+                    <li>Oversee HubSpot CRM, Google Workspace, and company's social media presence</li>
+                    <li>Provide comprehensive IT support for both Windows and macOS systems</li>
+                  </ul>
+                  <div class="tech-stack flex flex-wrap gap-2 mt-4">
+                    <span class="tech-pill">React Native</span>
+                    <span class="tech-pill">Android</span>
+                    <span class="tech-pill">Kotlin</span>
+                    <span class="tech-pill">Java</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience Item 3 -->
+            <div class="timeline-entry right">
+              <div class="timeline-entry-content glass-card">
+                <div class="entry-header">
+                  <span class="date">Jan 2022 - Feb 2023</span>
+                  <h3 class="text-xl font-bold text-blue-400">Web Developer/Administrator</h3>
+                  <p class="company text-gray-400">Upwork · Remote</p>
+                </div>
+                <div class="entry-body">
+                  <ul class="list-disc list-inside text-gray-400 space-y-2">
+                    <li>Design and implement responsive WordPress websites from Figma layouts</li>
+                    <li>Configure backend environments and manage domain purchases through GoDaddy</li>
+                    <li>Optimize website performance and enhance security with industry-standard plugins</li>
+                    <li>Create high-quality website content using Photoshop and Canva</li>
+                  </ul>
+                  <div class="tech-stack flex flex-wrap gap-2 mt-4">
+                    <span class="tech-pill">React</span>
+                    <span class="tech-pill">Node</span>
+                    <span class="tech-pill">Laravel</span>
+                    <span class="tech-pill">Vue</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience Item 4 -->
+            <div class="timeline-entry left">
+              <div class="timeline-entry-content glass-card">
+                <div class="entry-header">
+                  <span class="date">Mar 2021 - Jan 2022</span>
+                  <h3 class="text-xl font-bold text-blue-400">Web Developer</h3>
+                  <p class="company text-gray-400">Wellness PRO Inc · Internship</p>
+                </div>
+                <div class="entry-body">
+                  <ul class="list-disc list-inside text-gray-400 space-y-2">
+                    <li>Upgraded WordPress website by converting Classic Editor to Elementor</li>
+                    <li>Managed WooCommerce products and implemented SEO optimization</li>
+                    <li>Created visual content using Photoshop and Canva</li>
+                    <li>Streamlined data management through efficient digitalization processes</li>
+                  </ul>
+                  <div class="tech-stack flex flex-wrap gap-2 mt-4">
+                    <span class="tech-pill">HTML</span>
+                    <span class="tech-pill">CSS</span>
+                    <span class="tech-pill">JavaScript</span>
+                    <span class="tech-pill">PHP</span>
+                    <span class="tech-pill">WordPress</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="min-h-screen flex items-center justify-center py-20">
+        <div class="max-w-7xl mx-auto px-4 w-full">
+          <!-- Section Title -->
+          <div class="text-center mb-8">
+            <h1 class="title">Projects</h1>
+            <p class="section__text__p1 text-center sm:text-center break-words max-w-xs sm:max-w-none mx-auto">A
+              collection of projects that showcase my expertise and creativity</p>
+          </div>
+
+          <!-- Carousel Container -->
+          <div class="carousel relative overflow-hidden">
+            <!-- Carousel Items -->
+            <div class="carousel-track flex transition-transform duration-500">
+              <!-- Project Card 1 -->
+              <div class="carousel-item flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                <div class="project-card glass-card p-4">
+                  <img src="./assets/project-7.png" alt="Project 1" class="w-full h-48 object-cover rounded-lg mb-4" />
+                  <h2 class="project-title text-xl font-bold mb-2">Duo Tax Landing Page</h2>
+                  <p>Duo Tax is a leading Australian firm specializing in ATO-compliant property tax depreciation
+                    reports, helping investors maximize their tax deductions and boost their property returns.</p>
+                  <div class="flex flex-wrap justify-center gap-2 mb-4">
+                    <span class="tech-pill">WordPress</span>
+                    <span class="tech-pill">HTML5</span>
+                    <span class="tech-pill">CSS3</span>
+                    <span class="tech-pill">JavaScript</span>
+                    <span class="tech-pill">Bricks Builder</span>
+                    <span class="tech-pill">Vanta.js</span>
+                  </div>
+
+                  <div class="flex justify-center items-center mt-6">
+                    <a href="https://duotax.com.au/" class="text-blue-400 hover:text-blue-300 transition-colors"
+                      target="_blank" rel="noopener noreferrer">View Website →</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Project Card 2 -->
+              <div class="carousel-item flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                <div class="project-card glass-card p-4">
+                  <img src="./assets/project-5.png" alt="Project 1" class="w-full h-48 object-cover rounded-lg mb-4" />
+                  <h2 class="project-title text-xl font-bold mb-2">M.I.T.S. Pacific Website</h2>
+                  <p>M.I.T.S. Pacific is a Guam-based cybersecurity and IT firm specializing in CMMC consultation, risk
+                    management, and cybersecurity solutions for businesses, particularly in military construction.</p>
+                  <div class="flex flex-wrap justify-center gap-2 mb-4">
+                    <span class="tech-pill">WordPress</span>
+                    <span class="tech-pill">HTML5</span>
+                    <span class="tech-pill">CSS3</span>
+                    <span class="tech-pill">JavaScript</span>
+                    <span class="tech-pill">Vanta.js</span>
+                  </div>
+
+                  <div class="flex justify-center items-center mt-6">
+                    <a href="https://mitspacific.com/" class="text-blue-400 hover:text-blue-300 transition-colors"
+                      target="_blank" rel="noopener noreferrer">View Website →</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Project Card 3 -->
+              <div class="carousel-item flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                <div class="project-card glass-card p-4">
+                  <img src="./assets/project-4.png" alt="Project 2" class="w-full h-48 object-cover rounded-lg mb-4" />
+                  <h2 class="project-title text-xl font-bold mb-2">Chiropractic & Rehab Clinics Website</h2>
+                  <p class="text-gray-600">
+                    C&RC is a Philippine-based healthcare provider specializing in chiropractic care for pain relief,
+                    spinal correction, and preventive treatments.</p>
+
+                  <div class="flex flex-wrap justify-center gap-2 mb-4">
+                    <span class="tech-pill">WordPress</span>
+                    <span class="tech-pill">HTML5</span>
+                    <span class="tech-pill">CSS3</span>
+                    <span class="tech-pill">JavaScript</span>
+                    <span class="tech-pill">AWS</span>
+                  </div>
+
+                  <div class="flex justify-center items-center mt-6">
+                    <a href="https://chiropractic.ph/" class="text-blue-400 hover:text-blue-300 transition-colors"
+                      target="_blank" rel="noopener noreferrer">View Website →</a>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- Button Navigation -->
+          <button class="carousel-btn prev-btn absolute left-4 top-1/2 transform -translate-y-1/2">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn next-btn absolute right-4 top-1/2 transform -translate-y-1/2">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <!-- See More Projects on GitHub
+          <div class="mt-12 text-center">
+            <a href="https://github.com/top-dev0810" target="_blank" class="github-btn">
+              <i class="fab fa-github mr-2"></i> Explore More Projects on GitHub
+            </a>
+          </div> -->
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="min-h-screen flex items-center justify-center py-20">
+        <div class="max-w-xl mx-auto px-4">
+          <div class="text-center mb-8">
+            <h1 class="title">Contact Me</h1>
+            <p class="section__text__p1 text-center sm:text-center break-words max-w-xs sm:max-w-none mx-auto">Feel free
+              to reach out! I'm open to new opportunities, collaborations, or just a friendly chat.</p>
+          </div>
+          <form id="contact-form" class="space-y-6">
+            <div class="form-group">
+              <input type="text" id="name" name="from_name" required class="form-input" placeholder=" " />
+              <label for="name">Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="reply_to" required class="form-input" placeholder=" " />
+              <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" required class="form-input" rows="4" placeholder=" "></textarea>
+              <label for="message">Message</label>
+            </div>
+            <button type="submit" class="glow-button w-full">
+              <i class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;Send Message
+            </button>
+        </form>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- Mobile Menu Script -->
+
+</body>
+
+<!-- Footer Section -->
+<footer class="w-full text-gray-300 py-8 px-6">
+  <!-- Copyright -->
+  <div class="text-center text-sm text-gray-500 mt-6">
+    &copy; <span id="year"></span> Pitter Smith. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+  // Automatically update the year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ70PQBQMP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-QJ70PQBQMP');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+</html>

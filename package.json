@@ -1,0 +1,59 @@
+{
+  "name": "galaxy-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Interactive 3D portfolio with zoom-based navigation through space scenes",
+  "author": "Pitter Smith",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/top-dev0810/super-portfolio"
+  },
+  "homepage": "https://techinz.dev",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.121.4",
+    "@react-three/fiber": "^8.17.14",
+    "@vercel/analytics": "^1.5.0",
+    "gsap": "^3.12.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "0.172.0",
+    "three-stdlib": "^2.35.13",
+    "zustand": "^5.0.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.18.2",
+    "vite": "^6.0.5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "portfolio",
+    "threejs",
+    "3d",
+    "react",
+    "webgl",
+    "interactive",
+    "space",
+    "galaxy",
+    "solar system",
+    "Pitter Smithq"
+  ]
+}

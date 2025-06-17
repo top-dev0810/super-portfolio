@@ -1,0 +1,171 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Tektur', 'Space Grotesk', sans-serif;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48c3R5bGU+LnN0YXJ7ZmlsbDojZmZmO29wYWNpdHk6MC4zO30uc3RhcjpudGgtY2hpbGQoM24pe29wYWNpdHk6MC41O30uc3RhcjpudGgtY2hpbGQoMm4pe29wYWNpdHk6MC43O308L3N0eWxlPjxyZWN0IGNsYXNzPSJzdGFyIiB4PSIxMCIgeT0iMTAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0ic3RhciIgeD0iMjAiIHk9IjE1IiB3aWR0aD0iMC41IiBoZWlnaHQ9IjAuNSIvPjxyZWN0IGNsYXNzPSJzdGFyIiB4PSIzMCIgeT0iMjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0ic3RhciIgeD0iNDAiIHk9IjM1IiB3aWR0aD0iMC44IiBoZWlnaHQ9IjAuOCIvPjxyZWN0IGNsYXNzPSJzdGFyIiB4PSI1MCIgeT0iNDUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0ic3RhciIgeD0iNjAiIHk9IjU1IiB3aWR0aD0iMC42IiBoZWlnaHQ9IjAuNiIvPjxyZWN0IGNsYXNzPSJzdGFyIiB4PSI3MCIgeT0iNjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0ic3RhciIgeD0iODAiIHk9Ijc1IiB3aWR0aD0iMC43IiBoZWlnaHQ9IjAuNyIvPjxyZWN0IGNsYXNzPSJzdGFyIiB4PSI5MCIgeT0iODUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0ic3RhciIgeD0iMTUiIHk9Ijg1IiB3aWR0aD0iMC41IiBoZWlnaHQ9IjAuNSIvPjxyZWN0IGNsYXNzPSJzdGFyIiB4PSIyNSIgeT0iNzUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0ic3RhciIgeD0iMzUiIHk9IjY1IiB3aWR0aD0iMC44IiBoZWlnaHQ9IjAuOCIvPjxyZWN0IGNsYXNzPSJzdGFyIiB4PSI0NSIgeT0iNTUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0ic3RhciIgeD0iNTUiIHk9IjQ1IiB3aWR0aD0iMC42IiBoZWlnaHQ9IjAuNiIvPjxyZWN0IGNsYXNzPSJzdGFyIiB4PSI2NSIgeT0iMzUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0ic3RhciIgeD0iNzUiIHk9IjI1IiB3aWR0aD0iMC43IiBoZWlnaHQ9IjAuNyIvPjxyZWN0IGNsYXNzPSJzdGFyIiB4PSI4NSIgeT0iMTUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48L3N2Zz4=');
+  opacity: 0.6;
+}
+
+.content {
+  position: relative;
+  background: rgba(18, 18, 24, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 0.9;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+h2 {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.instructions {
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+ul,
+ol {
+  text-align: left;
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+.button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.buttonText {
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.alternative {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.link {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 2px;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.link:hover {
+  color: white;
+  border-bottom-color: white;
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 2rem 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+}

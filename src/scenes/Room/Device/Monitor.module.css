@@ -1,0 +1,313 @@
+.monitor-container {
+    width: 1925px;
+    height: 925px;
+    overflow: hidden;
+    position: relative;
+    background: #2e3436;
+    pointer-events: auto;
+}
+
+.monitor-container.fullscreen {
+    width: 100%;
+    height: 100%;
+}
+
+.monitor-scroll-hint {
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+    background-color: rgba(43, 156, 212, 0.85);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-family: Ubuntu, Cantarell, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1000;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(43, 156, 212, 0.6);
+    max-width: 300px;
+    animation: pulseAndBounce 5s infinite;
+}
+
+.scroll-hint-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hint-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.hint-subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.hint-subtitle-extra {
+    margin-top: 4px;
+}
+
+.gnome-panel {
+    height: 28px;
+    background: #272a2c;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 12px;
+    font-family: Ubuntu, Cantarell, sans-serif;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.panel-left {
+    display: flex;
+    align-items: center;
+}
+
+.activities-button {
+    color: #fff;
+    font-weight: bold;
+    padding: 0 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.panel-time {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.time-period {
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+.firefox-window {
+    width: 100%;
+    height: 100%;
+    background: #272a2c;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.title-bar {
+    height: 36px;
+    background: #343537;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.title-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.firefox-logo {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.window-title {
+    color: #bbb;
+    font-size: 12px;
+    font-family: Ubuntu, Cantarell, sans-serif;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.window-button {
+    width: 28px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.firefox-toolbar {
+    height: 40px;
+    background: #38393b;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.toolbar-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.toolbar-button {
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.address-bar {
+    flex: 1;
+    height: 28px;
+    background: #25272a;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: #ddd;
+    font-size: 12px;
+    font-family: Ubuntu, Cantarell, sans-serif;
+}
+
+.address-bar svg {
+    margin-right: 6px;
+}
+
+.web-content {
+    height: calc(100% - 105px);
+    overflow: auto;
+}
+
+.web-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+@keyframes pulseAndBounce {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.8;
+    }
+}
+
+.monitor-fullscreen-instructions-hint {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(46, 52, 64, 0.9);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Ubuntu', 'Cantarell', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+    max-width: 320px;
+}
+
+.monitor-fullscreen-instructions-hint .hint-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.monitor-fullscreen-instructions-hint .hint-text {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.monitor-fullscreen-instructions-hint .hint-subtitle {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.attention-pulse {
+    animation: pulse-attention 1.2s infinite;
+}
+
+@keyframes pulse-attention {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fullscreen-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 4px;
+    transition: background-color 0.2s;
+}
+
+.fullscreen-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fullscreen-toggle.is-active svg {
+    fill: #4285f4;
+}

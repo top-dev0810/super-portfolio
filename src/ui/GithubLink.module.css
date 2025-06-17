@@ -1,0 +1,72 @@
+.open-source-link {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  padding: 10px 14px;
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0.7;
+}
+
+.open-source-link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  background: rgba(40, 40, 40, 0.8);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.open-source-link svg {
+  transition: transform 0.3s ease;
+}
+
+.open-source-link:hover svg {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.open-source-text {
+  position: relative;
+  overflow: hidden;
+}
+
+.open-source-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: width 0.3s ease;
+}
+
+.open-source-link:hover .open-source-text::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .open-source-link {
+    bottom: 12px;
+    right: 12px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  
+  .open-source-link svg {
+    height: 16px;
+    width: 16px;
+  }
+}
