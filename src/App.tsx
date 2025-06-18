@@ -9,7 +9,6 @@ import ZoomProgressIndicator from './ui/ZoomProgressIndicator';
 import { GLOBAL } from './config/config';
 import NavigationHint from './ui/NavigationHint';
 import LoadingScreen from './ui/LoadingScreen';
-import GitHubLink from './ui/GithubLink';
 import WebGLWarning from './ui/WebGLWarning';
 import { useWebGL2Enabled } from './hooks/useWebGL2Support';
 import { NoToneMapping } from 'three';
@@ -79,7 +78,6 @@ function AppContent() {
           <NavigationHint />
           <ZoomProgressIndicator />
           <SceneTextComponent />
-          <GitHubLink />
         </>
       )}
     </>
